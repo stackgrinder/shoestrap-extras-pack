@@ -94,7 +94,7 @@ class Shoestrap_Extras_Pack {
 	function include_files() {
 		global $ss_settings;
 
-		$ssep_active_modules = $ss_settings['ssep_active_modules'];
+		$ssep_active_modules = isset( $ss_settings['ssep_active_modules'] ) ? $ss_settings['ssep_active_modules'] : array();
 
 		if ( isset( $ssep_active_modules['hidemeta'] ) && '1' == $ssep_active_modules['hidemeta'] ) {
 			// Hide meta info per-post
