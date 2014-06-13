@@ -31,7 +31,7 @@ add_filter( 'ssep_metabox_fields', 'ssep_layout_metabox' );
 function ssep_force_layout() {
 	global $post, $ss_layout;
 
-	$layout = apply_filters( 'shoestrap_forced_layout', get_post_meta( $post->ID, '_ss_assign_layout', true ) );
+	$layout = (is_object($post)) ? apply_filters( 'shoestrap_forced_layout', get_post_meta( $post->ID, '_ss_assign_layout', true ) ) : 'd';
 
 	// No need to continue if we've selected the default option.
 	if ( 'd' == $layout ) {
